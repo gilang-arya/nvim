@@ -19,18 +19,10 @@ return {
 					hide_gitignored = true, -- Menyembunyikan file yang diabaikan git
 				},
 				follow_current_file = { enabled = true }, -- Menyorot file yang sedang dibuka
-				hijack_netrw_behavior = "open_current", -- Membuka file dalam split, bukan tab bars
+				hijack_netrw_behavior = "open_default", -- Membuka file dalam split, bukan tab bars
 			},
 			window = {
 				width = 30, -- Lebar jendela
-			},
-			event_handlers = {
-				{
-					event = "file_opened",
-					handler = function()
-						require("neo-tree.command").execute({ action = "close" }) -- Menutup Neo-tree setelah file dibuka
-					end,
-				},
 			},
 		})
 	end,

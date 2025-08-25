@@ -4,10 +4,9 @@ return {
   config = function()
     require("ts-comments").setup({
       keymaps = {
-        toggle_line = "gcc",
+        toggle_line = "gb",
         toggle_block = "gc",
       },
     })
   end,
 }
-
