@@ -1,10 +1,4 @@
-function map(mode, lhs, rhs, opts)
-	local options = { noremap = true, silent = true }
-	if opts then
-		options = vim.tbl_extend("force", options, opts)
-	end
-	vim.keymap.set(mode, lhs, rhs, options)
-end
+local map = vim.keymap.set
 
 vim.g.mapleader = " "
 
@@ -24,8 +18,8 @@ map("n", "<leader>fb", "<cmd>Telescope buffers<CR>", { desc = "Find Buffers" })
 map("n", "<leader>fh", "<cmd>Telescope help_tags<CR>", { desc = "Help Tags" })
 
 -- Buffers
-map("n", "<Tab>", "<cmd>BufferLineCycleNext<CR>", { desc = "Next buffer" })
-map("n", "<S-Tab>", "<cmd>BufferLineCyclePrev<CR>", { desc = "Prev buffer" })
+map("n", "<leader>bn", "<cmd>BufferLineCycleNext<CR>", { desc = "Next buffer" })
+map("n", "<leader>bp", "<cmd>BufferLineCyclePrev<CR>", { desc = "Prev buffer" })
 map("n", "<leader>bx", "<cmd>bdelete!<CR>", { desc = "Delete buffer" })
 
 -- Spectre
